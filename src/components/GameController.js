@@ -1,9 +1,9 @@
 import React from "react";
 
-function App() {
+function GameController() {
   return(
     <p>test</p>
   );
 }
 
-export default App;
+export default GameController;

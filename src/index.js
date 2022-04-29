@@ -4,7 +4,7 @@ import './index.css';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import rootReducer from './reducers/index';
-import App from './components/App';
+import GameController from './components/GameController';
 
 const store = createStore(rootReducer);
 
@@ -14,7 +14,7 @@ store.subscribe(() =>
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <GameController />
   </Provider>,
   document.getElementById('root')
 );
