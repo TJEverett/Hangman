@@ -3,52 +3,20 @@ import picture from "../images/hangman.png"
 import PropTypes from "prop-types";
 
 function HangmanImage(props){
-  const slice0 = {
+  const sizing = {
     width: "125px",
     height: "167px",
-    objectFit: "none",
-    objectPosition: "0% 0%"
+    objectFit: "none"
   };
-  const slice1 = {
-    width: "125px",
-    height: "167px",
-    objectFit: "none",
-    objectPosition: "33% 0%"
-  };
-  const slice2 = {
-    width: "125px",
-    height: "167px",
-    objectFit: "none",
-    objectPosition: "66% 0%"
-  };
-  const slice3 = {
-    width: "125px",
-    height: "167px",
-    objectFit: "none",
-    objectPosition: "0% 100%"
-  };
-  const slice4 = {
-    width: "125px",
-    height: "167px",
-    objectFit: "none",
-    objectPosition: "66% 100%"
-  };
-  const slice5 = {
-    width: "125px",
-    height: "167px",
-    objectFit: "none",
-    objectPosition: "100% 100%"
-  };
-  let imgStyle = (props.slice === 0) ? slice0 :
-    (props.slice === 1) ? slice1 :
-    (props.slice === 2) ? slice2 :
-    (props.slice === 3) ? slice3 :
-    (props.slice === 4) ? slice4 :
-    (props.slice === 5) ? slice5 : {};
+  const imgStyle = (props.slice === 0) ? {objectPosition: "0% 0%"} :
+    (props.slice === 1) ? {objectPosition: "33% 0%"} :
+    (props.slice === 2) ? {objectPosition: "66% 0%"} :
+    (props.slice === 3) ? {objectPosition: "0% 100%"} :
+    (props.slice === 4) ? {objectPosition: "66% 100%"} : {objectPosition: "100% 100%"};
 
   return(
     <React.Fragment>
-        <img src={picture} alt={"hangman slice " + props.slice} style={imgStyle} />
+        <img src={picture} alt={"hangman slice " + props.slice} style={{...sizing, ...imgStyle}} />
     </React.Fragment>
   )
 }
