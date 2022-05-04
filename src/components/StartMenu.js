@@ -1,8 +1,11 @@
 import React from "react";
+import PropTypes from "prop-types";
 
-function StartMenu(){
+function StartMenu(props){
+
   function handleStartGame(event){
     event.preventDefault();
+    props.onSubmit(parseInt(event.target.wordCount.value));
   }
 
   return(
@@ -19,6 +22,10 @@ function StartMenu(){
       </form>
     </React.Fragment>
   );
+}
+
+StartMenu.propTypes = {
+  onSubmit: PropTypes.func
 }
 
 export default StartMenu;
