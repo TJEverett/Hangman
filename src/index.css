@@ -11,3 +11,35 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.gameBoard {
+  margin-right: 10%;
+  margin-left: 10%;
+}
+
+.guessButton {
+  width: 100%;
+  padding-top: 100%;
+  position: relative;
+}
+
+.guessButton button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 50%;
+  margin: 7.5%;
+  background-color: greenyellow;
+}
+
+.guessButton button:disabled {
+  background-color: red;
+}
+
+.gamePiece {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
