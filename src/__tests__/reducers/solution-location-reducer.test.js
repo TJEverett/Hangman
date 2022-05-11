@@ -1,6 +1,6 @@
 import solutionLocationReducer from "../../reducers/solution-location-reducer";
-import * as c from "./../../actions/ActionTypes";
-import * as characters from "./../../constants/Alphabet";
+import * as c from "../../actions/ActionTypes";
+import * as characters from "../../constants/Alphabet";
 
 describe("solutionLocationReducer", () => {
 
@@ -11,7 +11,7 @@ describe("solutionLocationReducer", () => {
   let phraseWords;
   let tempLetter;
 
-  test("Should return default stat if there is no action type passed into the reducer", () => {
+  test("Should return default state if there is no action type passed into the reducer", () => {
     expect(solutionLocationReducer({}, { type: null })).toEqual({});
   });
 
