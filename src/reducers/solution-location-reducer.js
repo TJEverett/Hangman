@@ -6,7 +6,7 @@ export default (state = {}, action) => {
     case c.GENERATE_LOCATION:
       return characters.english.reduce((o, key) => ({ ...o, [key]: [] }), {});
     case c.POPULATE_LOCATION:
-      let newState = { ...state };
+      let newState = JSON.parse(JSON.stringify(state));
       let tempLetter;
       const phraseUpper = action.phrase.toUpperCase();
       const phraseWords = phraseUpper.split(" ");
