@@ -6,3 +6,5 @@ export const POPULATE_PHRASE = "POPULATE_PHRASE";
 export const GUESS_PHRASE = "GUESS_PHRASE";
 export const INCREMENT_COUNTER = "INCREMENT_COUNTER";
 export const RESET_COUNTER = "RESET_COUNTER";
+export const TRUTHY_BOOL = "TRUTHY_BOOL";
+export const FALSY_BOOL = "FALSY_BOOL";
