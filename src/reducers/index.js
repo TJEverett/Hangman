@@ -12,7 +12,7 @@ export default (state = {}, action) => {
         gameRunning: boolReducer(state.gameRunning, action),
         solutionLocations: solutionLocationReducer(state.solutionChars, action),
         solutionChars: phraseReducer(state.solutionChars, action, state.solutionLocations),
-        mistakes: mistakeCounterReducer(state.mistakes, action),
+        mistakes: mistakeCounterReducer(state.mistakes, action, state.solutionLocations),
         guessButtons: letterButtonReducer(state.guessButtons, action, state.mistakes)
       };
     default:

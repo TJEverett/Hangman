@@ -13,6 +13,8 @@ let store = createStore(rootReducer);
 describe("rootReducer", () => {
 
   let action;
+  let action2;
+  const letterKey = characters.english.reduce((o, key) => ({ ...o, [key]: [] }), {});
 
   test("Should return default stat if no action type is recognized", () => {
     expect(rootReducer({}, { type: null })).toEqual({
@@ -51,9 +53,14 @@ describe("rootReducer", () => {
   });
 
   test("Check that INCREMENT_COUNTER action works for both mistakeCounterReducer and rootReducer", () => {
-    action = { type: c.INCREMENT_COUNTER };
+    action = { type: c.GENERATE_LOCATION }
+    action2 = {
+      type: c.GUESS_COUNTER,
+      letter: "B"
+    };
     store.dispatch(action);
-    expect(store.getState().mistakes).toEqual(mistakeCounterReducer(0, action));
+    store.dispatch(action2);
+    expect(store.getState().mistakes).toEqual(mistakeCounterReducer(0, action2, letterKey));
   });
   
   test("Check that GENERATE_BUTTON action works for both letterButtonReducer and rootReducer", () => {
