@@ -1,7 +1,7 @@
 import rootReducer from "../../reducers/index";
 import { createStore } from "redux";
 import boolReducer from "../../reducers/bool-reducer";
-import counterReducer from "../../reducers/counter-reducer";
+import mistakeCounterReducer from "../../reducers/mistake-counter-reducer";
 import letterButtonReducer from "../../reducers/letter-button-reducer";
 import phraseReducer from "../../reducers/phrase-reducer";
 import solutionLocationReducer from "../../reducers/solution-location-reducer";
@@ -28,8 +28,8 @@ describe("rootReducer", () => {
     expect(store.getState().gameRunning).toEqual(boolReducer(undefined, { type: null }));
   });
   
-  test("Check that initial state of counterReducer matches rootReducer", () => {
-    expect(store.getState().mistakes).toEqual(counterReducer(undefined, { type: null }));
+  test("Check that initial state of mistakeCounterReducer matches rootReducer", () => {
+    expect(store.getState().mistakes).toEqual(mistakeCounterReducer(undefined, { type: null }));
   });
 
   test("Check that initial state of letterButtonReducer matches rootReducer", () => {
@@ -50,10 +50,10 @@ describe("rootReducer", () => {
     expect(store.getState().gameRunning).toEqual(boolReducer(false, action));
   });
 
-  test("Check that INCREMENT_COUNTER action works for both counterReducer and rootReducer", () => {
+  test("Check that INCREMENT_COUNTER action works for both mistakeCounterReducer and rootReducer", () => {
     action = { type: c.INCREMENT_COUNTER };
     store.dispatch(action);
-    expect(store.getState().mistakes).toEqual(counterReducer(0, action));
+    expect(store.getState().mistakes).toEqual(mistakeCounterReducer(0, action));
   });
   
   test("Check that GENERATE_BUTTON action works for both letterButtonReducer and rootReducer", () => {
