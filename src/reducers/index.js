@@ -10,7 +10,7 @@ export default (state = {}, action) => {
     case (true):
       return {
         gameRunning: boolReducer(state.gameRunning, action),
-        solutionLocations: solutionLocationReducer(state.solutionChars, action),
+        solutionLocations: solutionLocationReducer(state.solutionLocations, action),
         solutionChars: phraseReducer(state.solutionChars, action, state.solutionLocations),
         mistakes: mistakeCounterReducer(state.mistakes, action, state.solutionLocations),
         guessButtons: letterButtonReducer(state.guessButtons, action, state.mistakes)
@@ -18,7 +18,7 @@ export default (state = {}, action) => {
     default:
       return {
         gameRunning: boolReducer(state.gameRunning, action),
-        solutionLocations: solutionLocationReducer(state.solutionChars, action),
+        solutionLocations: solutionLocationReducer(state.solutionLocations, action),
         solutionChars: phraseReducer(state.solutionChars, action),
         mistakes: mistakeCounterReducer(state.mistakes, action),
         guessButtons: letterButtonReducer(state.guessButtons, action)
