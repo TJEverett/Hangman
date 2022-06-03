@@ -14,8 +14,8 @@ function HangmanGuesses(props){
     <React.Fragment>
       <div style={table}>
         {props.buttonArray.map((buttonData) => 
-          <div className="guessButton">
-            <CustomButton display={buttonData.value} disabled={buttonData.disabled} onClick={() => props.guessFunc(buttonData.value)} key={buttonData.value} />
+          <div className="guessButton" key={buttonData.value}>
+            <CustomButton display={buttonData.value} disabled={buttonData.disabled} onClick={() => props.guessFunc(buttonData.value)}/>
           </div>
         )}
       </div>
